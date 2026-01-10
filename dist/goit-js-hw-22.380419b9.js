@@ -727,7 +727,6 @@ const refs = {
     countryBox: document.querySelector("#country"),
     countryList: document.querySelector(".countryList")
 };
-console.log(PNotify);
 refs.countryList.addEventListener("click", onCountryClick);
 function onCountryClick(e) {
     if (!e.target.classList.contains("country__list--name")) return;

@@ -10,7 +10,6 @@ const refs = {
   countryList: document.querySelector(".countryList"),
 };
 
-console.log(PNotify);
 refs.countryList.addEventListener("click", onCountryClick);
 
 function onCountryClick(e) {
