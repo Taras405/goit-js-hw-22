@@ -2,9 +2,7 @@ import { debounce } from "./debounce";
 import makeCountryListMarkup from "../templates/countryListMarkup.hbs";
 import makeCountryMarkup from "../templates/countryMarkup.hbs";
 import { fetchCountries } from "./fetchCountries";
-
 const { notice, error } = PNotify;
-import "@pnotify/core/dist/PNotify.css";
 
 const refs = {
   search: document.querySelector("#search"),
@@ -12,6 +10,7 @@ const refs = {
   countryList: document.querySelector(".countryList"),
 };
 
+console.log(PNotify);
 refs.countryList.addEventListener("click", onCountryClick);
 
 function onCountryClick(e) {
