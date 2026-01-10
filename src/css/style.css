@@ -1,0 +1,15 @@
+.country__list--name {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.country__content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.country__flag {
+  width: 200px;
+}
