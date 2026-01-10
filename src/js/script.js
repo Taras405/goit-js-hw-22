@@ -1,7 +1,7 @@
 import { debounce } from "./debounce";
 import makeCountryListMarkup from "../templates/countryListMarkup.hbs";
 import makeCountryMarkup from "../templates/countryMarkup.hbs";
-import { fetchCountries } from "./fetchCountries";
+import { fetchCountries } from "./fetchCountries.js";
 const { notice, error } = PNotify;
 
 const refs = {
