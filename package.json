@@ -8,7 +8,7 @@
     "build": "parcel build index.html --public-url ./",
     "postbuild": "copy .nojekyll dist\\.nojekyll || cp .nojekyll dist/.nojekyll",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "handlebars": "^4.7.8",

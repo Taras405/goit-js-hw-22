@@ -1,28 +1,29 @@
-import { debounce } from "./debounce.js";
-import makeCountryListMarkup from "../templates/countryListMarkup.hbs";
-import makeCountryMarkup from "../templates/countryMarkup.hbs";
-import { fetchCountries } from "./fetchCountries.js";
+import { debounce } from './debounce.js';
+import makeCountryListMarkup from '../templates/countryListMarkup.hbs';
+import makeCountryMarkup from '../templates/countryMarkup.hbs';
+import Handlebars from 'handlebars';
+import { fetchCountries } from './fetchCountries.js';
 const { notice, error } = PNotify;
 
 const refs = {
-  search: document.querySelector("#search"),
-  countryBox: document.querySelector("#country"),
-  countryList: document.querySelector(".countryList"),
+  search: document.querySelector('#search'),
+  countryBox: document.querySelector('#country'),
+  countryList: document.querySelector('.countryList'),
 };
 
-refs.countryList.addEventListener("click", onCountryClick);
+refs.countryList.addEventListener('click', onCountryClick);
 
 function onCountryClick(e) {
-  if (!e.target.classList.contains("country__list--name")) return;
+  if (!e.target.classList.contains('country__list--name')) return;
 
   const searchQuery = e.target.dataset.name;
 
-  fetchCountries(searchQuery).then((countries) =>
+  fetchCountries(searchQuery).then(countries =>
     renderCountryCard(countries[0])
   );
 }
 
-refs.search.addEventListener("input", debounce(onSearch, 500));
+refs.search.addEventListener('input', debounce(onSearch, 500));
 
 function onSearch(e) {
   const query = e.target.value.trim();
@@ -33,13 +34,13 @@ function onSearch(e) {
 
   fetchCountries(query)
     .then(handleCountries)
-    .catch(() => error({ text: "Country not found", delay: 1500 }));
+    .catch(() => error({ text: 'Country not found', delay: 1500 }));
 }
 
 function handleCountries(countries) {
   if (countries.length > 10) {
     notice({
-      text: "Too many matches found. Please enter a more specific query!",
+      text: 'Too many matches found. Please enter a more specific query!',
       delay: 1500,
     });
     return;
@@ -70,6 +71,6 @@ function renderCountryCard(country) {
 }
 
 function clearMarkup() {
-  refs.countryList.innerHTML = "";
-  refs.countryBox.innerHTML = "";
+  refs.countryList.innerHTML = '';
+  refs.countryBox.innerHTML = '';
 }
