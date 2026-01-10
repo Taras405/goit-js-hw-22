@@ -3,7 +3,7 @@ import makeCountryListMarkup from "../templates/countryListMarkup.hbs";
 import makeCountryMarkup from "../templates/countryMarkup.hbs";
 import { fetchCountries } from "./fetchCountries";
 
-import { notice, error } from "@pnotify/core";
+const { notice, error } = PNotify;
 import "@pnotify/core/dist/PNotify.css";
 
 const refs = {
@@ -19,7 +19,9 @@ function onCountryClick(e) {
 
   const searchQuery = e.target.dataset.name;
 
-  fetchCountries(searchQuery).then((countries) => renderCountryCard(countries[0]));
+  fetchCountries(searchQuery).then((countries) =>
+    renderCountryCard(countries[0])
+  );
 }
 
 refs.search.addEventListener("input", debounce(onSearch, 500));
