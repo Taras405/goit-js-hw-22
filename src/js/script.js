@@ -1,8 +1,8 @@
 import { debounce } from './debounce.js';
 import makeCountryListMarkup from '../templates/countryListMarkup.hbs';
 import makeCountryMarkup from '../templates/countryMarkup.hbs';
-import Handlebars from 'handlebars';
 import { fetchCountries } from './fetchCountries.js';
+
 const { notice, error } = PNotify;
 
 const refs = {
