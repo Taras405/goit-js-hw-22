@@ -775,7 +775,51 @@ function clearMarkup() {
     refs.countryBox.innerHTML = "";
 }
 
-},{"../templates/countryListMarkup.hbs":"choop","../templates/countryMarkup.hbs":"9afyz","./fetchCountries.js":"LnPoi","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./debounce.js":"deJrG"}],"choop":[function(require,module,exports,__globalThis) {
+},{"./debounce.js":"deJrG","../templates/countryListMarkup.hbs":"choop","../templates/countryMarkup.hbs":"9afyz","./fetchCountries.js":"LnPoi","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"deJrG":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "debounce", ()=>debounce);
+function debounce(fn, delay) {
+    let timeout;
+    return (...args)=>{
+        clearTimeout(timeout);
+        timeout = setTimeout(()=>{
+            fn.apply(this, args);
+        }, delay);
+    };
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"choop":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebars = require("handlebars");
@@ -11991,37 +12035,7 @@ var isSourceNode = "$$$isSourceNode$$$";
 };
 exports.SourceNode = SourceNode;
 
-},{"a07d2c2c4b11c39f":"fWPsq","18d5ff036a08fa06":"5Iq0C"}],"jnFvT":[function(require,module,exports,__globalThis) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"9afyz":[function(require,module,exports,__globalThis) {
+},{"a07d2c2c4b11c39f":"fWPsq","18d5ff036a08fa06":"5Iq0C"}],"9afyz":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _handlebars = require("handlebars");
@@ -12142,20 +12156,6 @@ const fetchCountries = (searchQuery)=>{
         return res.json();
     });
 };
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"deJrG":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "debounce", ()=>debounce);
-function debounce(fn, delay) {
-    let timeout;
-    return (...args)=>{
-        clearTimeout(timeout);
-        timeout = setTimeout(()=>{
-            fn.apply(this, args);
-        }, delay);
-    };
-}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["3OHon","2xGku"], "2xGku", "parcelRequire8bfe", {})
 
