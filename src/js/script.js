@@ -1,4 +1,4 @@
-import { debounce } from "./debounce";
+import { debounce } from "./debounce.js";
 import makeCountryListMarkup from "../templates/countryListMarkup.hbs";
 import makeCountryMarkup from "../templates/countryMarkup.hbs";
 import { fetchCountries } from "./fetchCountries.js";
