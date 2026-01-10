@@ -1,4 +1,4 @@
-import debounce from "lodash.debounce";
+import { debounce } from "./debounce";
 import makeCountryListMarkup from "../templates/countryListMarkup.hbs";
 import makeCountryMarkup from "../templates/countryMarkup.hbs";
 import { fetchCountries } from "./fetchCountries";
