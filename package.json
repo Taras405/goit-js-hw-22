@@ -2,12 +2,13 @@
   "name": "goit-js-hw-22",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://taras405.github.io/goit-js-hw-22/",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html --public-url ./",
     "postbuild": "copy .nojekyll dist\\.nojekyll || cp .nojekyll dist/.nojekyll",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "handlebars": "^4.7.8",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
-    "parcel": "^2.16.3"
+    "parcel": "^2.16.3",
+    "posthtml-include": "^2.0.1"
   }
 }
