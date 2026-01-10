@@ -1,5 +1,5 @@
 import { debounce } from './debounce.js';
-import Handlebars from 'handlebars/runtime';
+import Handlebars from "handlebars/dist/handlebars.runtime";
 import makeCountryListMarkup from '../templates/countryListMarkup.hbs';
 import makeCountryMarkup from '../templates/countryMarkup.hbs';
 import { fetchCountries } from './fetchCountries.js';
